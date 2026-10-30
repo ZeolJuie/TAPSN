@@ -1,0 +1,182 @@
+name = "default_multimodal"
+
+[gait_motion]
+enabled = true
+speed_min = 0.2
+speed_ref = 1.4
+frequency_min_hz = 1.2
+frequency_max_hz = 2.2
+waist_z_amplitude_min_m = 0.01
+waist_z_amplitude_max_m = 0.04
+head_z_scale = 0.75
+head_pitch_amplitude_min_deg = 0.2
+head_pitch_amplitude_max_deg = 1.2
+
+[[sensor]]
+type = "camera.rgb"
+name = "CAM_FRONT"
+mount = "waist"
+image_size_x = 1600
+image_size_y = 900
+fov = 120
+sensor_tick = 0.05
+location = [0.25, 0.00, 0.20]
+rotation = [0.0, 0.0, 0.0]
+
+[[sensor]]
+type = "camera.depth"
+name = "CAM_FRONT_DEPTH"
+mount = "waist"
+image_size_x = 1600
+image_size_y = 900
+fov = 120
+sensor_tick = 0.05
+location = [0.25, 0.00, 0.20]
+rotation = [0.0, 0.0, 0.0]
+
+[[sensor]]
+type = "camera.semantic_segmentation"
+name = "CAM_FRONT_SEMANTIC"
+mount = "waist"
+image_size_x = 1600
+image_size_y = 900
+fov = 120
+sensor_tick = 0.05
+location = [0.25, 0.00, 0.20]
+rotation = [0.0, 0.0, 0.0]
+
+[[sensor]]
+type = "camera.rgb"
+name = "CAM_FRONT_RIGHT"
+mount = "waist"
+image_size_x = 1600
+image_size_y = 900
+fov = 70
+sensor_tick = 0.05
+location = [0.13, 0.22, 0.20]
+rotation = [0.0, 60.0, 0.0]
+
+[[sensor]]
+type = "camera.rgb"
+name = "CAM_FRONT_LEFT"
+mount = "waist"
+image_size_x = 1600
+image_size_y = 900
+fov = 70
+sensor_tick = 0.05
+location = [0.13, -0.22, 0.20]
+rotation = [0.0, -60.0, 0.0]
+
+[[sensor]]
+type = "camera.rgb"
+name = "CAM_BACK"
+mount = "waist"
+image_size_x = 1600
+image_size_y = 900
+fov = 110
+sensor_tick = 0.05
+location = [-0.25, 0.00, 0.20]
+rotation = [0.0, 180.0, 0.0]
+
+[[sensor]]
+type = "camera.rgb"
+name = "CAM_BACK_RIGHT"
+mount = "waist"
+image_size_x = 1600
+image_size_y = 900
+fov = 70
+sensor_tick = 0.05
+location = [-0.13, 0.22, 0.20]
+rotation = [0.0, 120.0, 0.0]
+
+[[sensor]]
+type = "camera.rgb"
+name = "CAM_BACK_LEFT"
+mount = "waist"
+image_size_x = 1600
+image_size_y = 900
+fov = 70
+sensor_tick = 0.05
+location = [-0.13, -0.22, 0.20]
+rotation = [0.0, -120.0, 0.0]
+
+[[sensor]]
+type = "lidar.ray_cast"
+name = "LIDAR_TOP"
+mount = "head"
+range = 40.0
+channels = 64
+rotation_frequency = 20.0
+points_per_second = 1000000
+location = [0.0, 0.0, 1.00]
+rotation = [0.0, 0.0, 0.0]
+
+[[sensor]]
+type = "lidar.ray_cast_semantic"
+name = "LIDAR_TOP_SEMANTIC"
+mount = "head"
+range = 40.0
+channels = 64
+rotation_frequency = 20.0
+points_per_second = 1000000
+location = [0.0, 0.0, 1.00]
+rotation = [0.0, 0.0, 0.0]
+
+[[sensor]]
+type = "camera.rgb"
+name = "CAM_TOP"
+mount = "head"
+image_size_x = 1600
+image_size_y = 900
+fov = 120
+sensor_tick = 0.05
+location = [0.0, 0.0, 1.00]
+rotation = [0.0, 0.0, 0.0]
+
+[[sensor]]
+type = "lidar.ray_cast"
+name = "LIDAR_WAIST"
+mount = "waist"
+range = 40.0
+channels = 64
+rotation_frequency = 20.0
+points_per_second = 1000000
+location = [0.12, 0.0, 0.20]
+rotation = [0.0, 0.0, 0.0]
+
+[[sensor]]
+type = "radar"
+name = "RADAR_FRONT"
+mount = "waist"
+horizontal_fov = 90.0
+vertical_fov = 30.0
+points_per_second = 15000
+range = 30.0
+sensor_tick = 0.05
+location = [0.20, 0.0, 0.20]
+rotation = [0.0, 0.0, 0.0]
+
+[[sensor]]
+type = "imu"
+name = "IMU_BODY"
+mount = "waist"
+noise_accel_stddev_x = 0.01
+noise_accel_stddev_y = 0.01
+noise_accel_stddev_z = 0.01
+noise_gyro_stddev_x = 0.001
+noise_gyro_stddev_y = 0.001
+noise_gyro_stddev_z = 0.001
+sensor_tick = 0.05
+location = [0.0, 0.0, 0.20]
+rotation = [0.0, 0.0, 0.0]
+
+[[sensor]]
+type = "gnss"
+name = "GNSS_BODY"
+mount = "waist"
+noise_alt_stddev = 0.2
+noise_lat_stddev = 0.000001
+noise_lon_stddev = 0.000001
+sensor_tick = 0.05
+location = [0.0, 0.0, 0.20]
+rotation = [0.0, 0.0, 0.0]

@@ -1,0 +1,36 @@
+sequence_id = "auto"
+output_root = "artifacts/sequences"
+reuse_existing_root = false
+frame_stride = 10
+valid_distance = 40.0
+sensor_sync_timeout = 1.0
+stop_on_ego_end = true
+
+[export]
+ego_csv = true
+labels_json = true
+log_json = true
+calibration_json = true
+dynamic_actors = true
+city_objects = true
+simulation_records = true
+pedestrian_bev = true
+config_snapshots = true
+
+[annotation]
+actor_filters = ["*pedestrian*", "*vehicle*"]
+city_object_labels = [
+  "TrafficLight",
+  "TrafficSigns",
+  "Poles",
+  "Static",
+  "Fences",
+  "Other",
+  "Dynamic",
+  "GuardRail",
+  "Car",
+  "Truck",
+  "Bus",
+  "Motorcycle",
+  "Bicycle",
+]
